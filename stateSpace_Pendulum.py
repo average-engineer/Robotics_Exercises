@@ -2,7 +2,7 @@
 
 import math
 
-def stateSpace_Pendulum(x1,x2,length,g = 9.8):
+def stateSpace_Pendulum(x1,x2,length,g = 9.81):
     # x1: Pendulum Angle (1st State)
     # x2: Pendulum Angular rate (2nd State)
     # Length: Length of Pendulum
