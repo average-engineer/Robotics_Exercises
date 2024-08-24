@@ -1,5 +1,6 @@
 # Ignore .asv files
 *.asv
 
-# Ignore .pycache folder
+# Ignore folder
 __pycache__/
+.ipynb_checkpoints/
