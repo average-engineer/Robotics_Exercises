@@ -12,7 +12,6 @@ def swingUp_Pendulum(x1,x2,m,l,b,K,u_max,g=9.81):
         u = K*(E_des - E_act)
     else:
         u = -K*(E_des - E_act)
-    # u = K*(E_des - E_act)*np.sign(x2*math.cos(x1))
     # Implementing actuator limits
     u = np.clip(u,-u_max,u_max)
     # State-Space
