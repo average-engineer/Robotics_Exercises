@@ -11,7 +11,7 @@ from swingUp_Pendulum import swingUp_Pendulum as pend_swing
 
 # Switches
 visual = False # Visualization
-closedLoop = True # Switch between open-loop and closed-loop
+closedLoop = False # Switch between open-loop and closed-loop
 controller = 1 # 0: PD, 1: Energy Swing-up
 
 # Integration Range
@@ -25,7 +25,7 @@ h = (b-a)/N
 t = np.arange(a, b, h)
 
 # Initial Conditions
-x1_0 = 0*(math.pi/180)
+x1_0 = 30*(math.pi/180)
 x2_0 = 0
 
 L = 0.5 # Pendulum length
@@ -59,7 +59,7 @@ while int_count < N:
             x1_dot, x2_dot, u = pend_swing(x1,x2,m,L,c,K,u_max)
         
     else:
-        x1_dot, x2_dot = pend(x1,x2,L)
+        x1_dot, x2_dot, u = pend(x1,x2,L)
     
     x1 = x1 + h*x1_dot
     x2 = x2 + h*x2_dot

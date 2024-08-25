@@ -10,4 +10,6 @@ def stateSpace_Pendulum(x1,x2,length,g = 9.81):
     x1_dot = x2
     x2_dot = -(g/length)*math.sin(x1)
     
-    return x1_dot, x2_dot
+    u = 0
+    
+    return x1_dot, x2_dot, u
