@@ -11,7 +11,7 @@ from swingUp_Pendulum import swingUp_Pendulum as pend_swing
 
 # Switches
 visual = False # Visualization
-closedLoop = False # Switch between open-loop and closed-loop
+closedLoop = True # Switch between open-loop and closed-loop
 controller = 1 # 0: PD, 1: Energy Swing-up
 
 # Integration Range

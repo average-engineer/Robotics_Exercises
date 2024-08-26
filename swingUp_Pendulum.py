@@ -8,7 +8,7 @@ def swingUp_Pendulum(x1,x2,m,l,b,K,u_max,g=9.81):
     E_des = 2*m*g*l # Desired Energy 
     E_act = 0.5*m*(l**2)*(x2**2) + m*g*l*(1 - math.cos(x1))
     # E_act = 0.5*m*(l**2)*(x2**2) - m*g*l*(math.cos(x1))
-    if x2*math.cos(x1) >= 0:
+    if x2 >= 0:
         u = K*(E_des - E_act)
     else:
         u = -K*(E_des - E_act)
