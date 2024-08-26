@@ -10,6 +10,8 @@
 \contentsline {section}{\numberline {2.1}Exercise 4}{6}{}%
 \contentsline {subsection}{\numberline {2.1.1}Forward Kinematics}{6}{}%
 \contentsline {subsection}{\numberline {2.1.2}Inverse Kinematics}{7}{}%
-\contentsline {chapter}{\numberline {3}Dynamics}{8}{}%
-\contentsline {chapter}{\numberline {4}Control}{9}{}%
+\contentsline {subsection}{\numberline {2.1.3}Program Verification}{8}{}%
+\contentsline {subsection}{\numberline {2.1.4}Workspace}{8}{}%
+\contentsline {chapter}{\numberline {3}Dynamics}{10}{}%
+\contentsline {chapter}{\numberline {4}Control}{11}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -62,20 +62,34 @@ q3Grid = [q3_min,q3_max];
 % workspace points
 % figure
 % hold on
+X = [];
+Y = [];
+Z = [];
 count = 1;
 % 3 Nested Loops (obviously not the most efficient)
 for kk = 1:length(q1Grid)
     for jj = 1:length(q2Grid)
         for ii = 1:length(q3Grid)
-            p_x(count) = q3Grid(ii)*cos(q1Grid(kk))*sin(q2Grid(jj));
-            p_y(count) = q3Grid(ii)*sin(q1Grid(kk))*sin(q2Grid(jj));
-            p_z(count) = q3Grid(ii)*cos(q2Grid(jj));
-            count = count + 1;
+            x = q3Grid(ii)*cos(q1Grid(kk))*sin(q2Grid(jj));
+            y = q3Grid(ii)*sin(q1Grid(kk))*sin(q2Grid(jj));
+            z = q3Grid(ii)*cos(q2Grid(jj));
+            % Appending
+            X = [X, x];
+            Y = [Y, y];
+            Z = [Z, z];
         end
     end
 end
 % plot3(p_x,p_y,p_z,'*','color','b')
 % grid on
+figure
+scatter3(X, Y, Z, 'M');
+xlabel('X');
+ylabel('Y');
+zlabel('Z');
+grid on;
+axis equal;
+%view(135,135)
 %matlab2tikz();
 
 %% Inverse Kinematics 

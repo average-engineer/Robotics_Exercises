@@ -106,3 +106,10 @@ Hence, the inverse kinematics can be summarized as
 The verification of kinematics is done in the MATLAB\textsuperscript{\textregistered} script \emph{Kinematics.m}. The input DH parameters are read from the file \emph{dhParam.txt}. The script first computes the forward kinematics according to \eqref{eq:fwdKin} for the input DH parameters and then the inverse kinematics according to \eqref{eq:invKin}. The output of the inverse kinematics matches the inputs in the the file \emph{dhParam.txt}.
 
 \subsection{Workspace}
+\begin{figure}[h!]
+	\centering
+	\scalebox{1}{\input{images/workspace}}
+	\caption{3D Workspace of the manipulator}
+	\label{fig:workspace}
+\end{figure}
+\figref{fig:workspace} illustrates the three-dimensional workspace of the manipulator for the given joint constraints. It should be noted that the workspace is plotted with respect to the assumed base frame orientation and the present exposition of the workspace figure may not be optimal for illustration.
