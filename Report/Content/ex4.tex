@@ -9,4 +9,100 @@ For brevity, only the Z and X axes of the joint frames are drawn in 2D, axis com
 
 \begin{figure}[h!]
 	\input{images/fwdKinematics}
+	\caption{Joint Frame Assignment}
+	\label{fig:frames}
 \end{figure}
+
+\figref{fig:frames} illustrates the joint frame allocation along with the base frame $\left\{0\right\}$. 
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Frame $\left(i\right)$} &  $\alpha_{i-1} \left[\text{deg}\right]$ & $a_{i-1} \left[\text{m}\right]$ $d_i \left[\text{m}\right]$ & $\theta_i \left[\text{deg}\right]$ \\ \hline
+		1                                  & 0                         & 0                 &       $q_1$                              \\ \hline
+		2                                 & -90                         & 0                 &       $q_2$                              \\ \hline
+		3                                 & 90                         & $q_3$                    & 0                                   \\ \hline
+	\end{tabular}
+	\caption{Denavit-Hartenberg parameters}
+	\label{tab:dh}
+\end{table}
+Table \ref{tab:dh} summarizes the DH parameters according to the frame allocation of the manipulator. The homogenous transformation matrix is used to represent the pose. The transformation matrix between two arbritary frames $\left\{A\right\}$ and $\left\{B\right\}$ is given by
+\begin{equation*}
+	\bm{T}_{B}^{A} = \left[\begin{array}{c|c}
+		\bm{R}_{B}^{A} & \bm{r}_{B}^{A}\\
+		\hline
+		\bm{0}_{1\times3} & 1
+	\end{array}\right]
+\end{equation*}
+where $\bm{R}_{B}^{A}$ describes the orientation of $\left\{B\right\}$ with respect to $\left\{A\right\}$ while $\bm{r}_{B}^{A}$ represents the position of origin of $\left\{B\right\}$ with respect to the origin of $\left\{A\right\}$. Assuming $E\left(x,y,z\right)$ directly lies on the origin of $\left\{3\right\}$, the forward kinematics are given by
+\begin{equation*}
+	\bm{T}_{3}^{0} = \left[\begin{array}{c|c}
+		\bm{R}_{3}^{0} & \bm{r}_{3}^{0}\\
+		\hline
+		\bm{0}_{1\times3} & 1
+	\end{array}\right]
+\end{equation*}
+where $\bm{r}_{3}^{0} = \left(x \text{ } y \text{ } z\right)\trans$ and 
+\begin{equation*}
+	\bm{T}_{3}^{0} = \bm{T}_{1}^{0}\bm{T}_{2}^{1}\bm{T}_{3}^{2}
+\end{equation*}
+where 
+\begin{equation*}
+	\bm{T}_{i}^{i-1}=\left[\begin{array}{cccc}
+		\cos \theta_i & -\sin \theta_i & 0 & a_{i-1} \\
+		-\sin \theta_i \cos \alpha_{i-1} & \cos \theta_i \cos \alpha_{i-1} & -\sin \alpha_{i-1} & -\sin \alpha_{i-1} d_i \\
+		\sin \theta_i \sin \alpha_{i-1} & \cos \theta_i \sin \alpha_{i-1} & \cos \alpha_{i-1} & \cos \alpha_{i-1} d_i \\
+		0 & 0 & 0 & 1
+	\end{array}\right]
+\end{equation*}
+Hence, 
+\begin{equation}
+	\begin{bmatrix}
+		x\\
+		y\\
+		z
+	\end{bmatrix} = \begin{bmatrix}
+	q_3\cos\left(q_1\right)\sin\left(q_2\right)\\
+	q_3\sin\left(q_1\right)\sin\left(q_2\right)\\
+	q_3\cos\left(q_2\right)
+\end{bmatrix}
+\label{eq:fwdKin}
+\end{equation}
+
+\subsection{Inverse Kinematics}
+Inverse kinematics can be computed with the help of the obtained forward kinematics expression. We know from \eqref{eq:fwdKin}
+\begin{align*}
+	&x^2 + y^2 + z^2 = q_3^2 \\
+	\implies&q_3 = \sqrt{x^2 + y^2 + z^2}
+\end{align*}
+Moreover,
+\begin{align*}
+	\cos\left(q_2\right) &= \frac{z}{q_3} = \frac{z}{\sqrt{x^2 + y^2 + z^2}}\\
+	\sin\left(q_2\right) &= \sqrt{1 - \cos\left(q_2\right)^2} = \frac{\sqrt{x^2 + y^2}}{\sqrt{x^2 + y^2 + z^2}} \\
+	\implies \tan\left(q_2\right) &= \frac{\sqrt{x^2 + y^2}}{z} \\
+	\implies q_2 &= \arctan2\left(\sqrt{x^2 + y^2},z\right)
+\end{align*}
+The negative version of $\sin\left(q_2\right)$ is not considered since it is assumed that $q_2 \in \left[\frac{-\pi}{2},\frac{\pi}{2}\right]$ and hence $\arctan2$ is used. Finally the expression for $q_1$ is obtained trivially
+\begin{equation*}
+	q_1 = \arctan\left(\frac{y}{x}\right)
+\end{equation*}
+Since $q_1 \in \left[0,\pi\right]$, hence $\arctan$ is used and zero values of $x$ represents arbritary values of $q_1$.
+Hence, the inverse kinematics can be summarized as 
+\begin{equation}
+	\begin{bmatrix}
+		q_1\\
+		q_2\\
+		q_3
+	\end{bmatrix} = \begin{bmatrix}
+	\arctan\left(\frac{y}{x}\right)\\
+	\arctan2\left(\sqrt{x^2 + y^2},z\right)\\
+	\sqrt{x^2 + y^2 + z^2}
+\end{bmatrix}
+\label{eq:invKin}
+\end{equation}
+\subsection{Program Verification}
+The verification of kinematics is done in the MATLAB\textsuperscript{\textregistered} script \emph{Kinematics.m}. The input DH parameters are read from the file \emph{dhParam.txt}. The script first computes the forward kinematics according to \eqref{eq:fwdKin} for the input DH parameters and then the inverse kinematics according to \eqref{eq:invKin}. The output of the inverse kinematics matches the inputs in the the file \emph{dhParam.txt}.
+
+\subsection{Workspace}

@@ -5,7 +5,7 @@ clc
 clearvars
 close all
 format short
-
+addpath("C:\Users\ashut\Desktop\Werk\Chalmers_Robotics\Robotics_Exercises\Report\matlabtikz")
 %% Reading the input parameter file
 file = fopen("dhParam.txt",'r');
 
@@ -60,8 +60,8 @@ q2Grid = linspace(q2_min,q2_max,50);
 q3Grid = [q3_min,q3_max];
 % Using the analytical expression of Fwd Kinematics to compute the
 % workspace points
-figure
-hold on
+% figure
+% hold on
 count = 1;
 % 3 Nested Loops (obviously not the most efficient)
 for kk = 1:length(q1Grid)
@@ -74,9 +74,9 @@ for kk = 1:length(q1Grid)
         end
     end
 end
-plot3(p_x,p_y,p_z,'*','color','b')
-grid on
-
+% plot3(p_x,p_y,p_z,'*','color','b')
+% grid on
+%matlab2tikz();
 
 %% Inverse Kinematics 
 disp("*******************Inverse Kinematics*********************\n")

@@ -9,6 +9,7 @@
 \contentsline {chapter}{\numberline {2}Geometry and Kinematics}{6}{}%
 \contentsline {section}{\numberline {2.1}Exercise 4}{6}{}%
 \contentsline {subsection}{\numberline {2.1.1}Forward Kinematics}{6}{}%
-\contentsline {chapter}{\numberline {3}Dynamics}{7}{}%
-\contentsline {chapter}{\numberline {4}Control}{8}{}%
+\contentsline {subsection}{\numberline {2.1.2}Inverse Kinematics}{7}{}%
+\contentsline {chapter}{\numberline {3}Dynamics}{8}{}%
+\contentsline {chapter}{\numberline {4}Control}{9}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

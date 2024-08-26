@@ -21,4 +21,13 @@
 	\draw[thick,->](x2)--(z2);
 	\draw[->, bend right = 45] ($(x2) + (0.5,-0.2)$)node[xshift = 0.3cm]{$q_2$} to ($(x2) + (0.5,0.2)$);
 	
+	% Frame 3
+	\coordinate (x3) at ($(x2) + (0,2)$); 
+	\node[] at (x3){$\oplus$};
+	\node[xshift = -0.5cm] at (x3){$x_2$};
+	\coordinate (z3) at ($(x3) + (0,1)$);
+	\draw[thick,->](x3)--(z3);
+	\node[yshift = 0.25cm] at (z3){$z_3$};
+	\draw[<->] ($(x2) + (1.5,0)$) -- node{$q_3$}($(x3) + (1.5,0)$);
+	
 \end{tikzpicture}
