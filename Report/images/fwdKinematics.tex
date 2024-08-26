@@ -1,0 +1,24 @@
+\centering
+\tikzstyle{mod}    = [circle, inner sep=0pt, minimum size=1.0cm, draw=black]
+\tikzstyle{branch}    = [circle, inner sep=0pt, minimum size=0.1mm, fill=black, draw=black]
+\tikzstyle{dummy}     = [inner sep=0pt, minimum size=0pt]
+\begin{tikzpicture}[auto, node distance=2cm, >=stealth']
+	% Frames 1 and 2
+	\coordinate (base) at (0,0);
+	\node[] at (base){$\otimes$};
+	\node[yshift = -0.25cm] at (base){$z_0,z_1$};
+	\coordinate (x1) at ($(base) + (0,1)$);
+	\node[yshift = 0.25cm] at (x1){$x_0,x_1$};
+	\draw[thick,->](base)--(x1);
+	\draw[->, bend left = 45] ($(base) + (-0.5,0.2)$)node[yshift = 0.3cm]{$q_1$} to ($(base) + (0.5,0.2)$);
+	
+	% Frame 2
+	\coordinate (x2) at ($(base) + (2,0)$);
+	\node[] at (x2){$\oplus$};
+	\node[yshift = -0.25cm] at (x2){$x_2$};
+	\coordinate (z2) at ($(x2) + (1,0)$);
+	\node[yshift = 0.25cm] at (z2){$z_2$};
+	\draw[thick,->](x2)--(z2);
+	\draw[->, bend right = 45] ($(x2) + (0.5,-0.2)$)node[xshift = 0.3cm]{$q_2$} to ($(x2) + (0.5,0.2)$);
+	
+\end{tikzpicture}

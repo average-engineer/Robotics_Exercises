@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+	
+	% Define points for the three bases
+	\coordinate (A1) at (0,0);
+	\coordinate (A2) at (3,0);
+	\coordinate (A3) at (6,0);
+	
+	% Define the height for the upper horizontal line
+	\def\h{2}
+	
+	% Draw the bases with semi-circles
+	\draw[thick] (A1) -- ++(0.5,0);
+	\draw[thick] (A2) -- ++(0.5,0);
+	\draw[thick] (A3) -- ++(0.5,0);
+	
+	% Semi-circles at the bases
+	\draw[thick] (A1) arc[start angle=180,end angle=0,radius=0.25];
+	\draw[thick] (A2) arc[start angle=180,end angle=0,radius=0.25];
+	\draw[thick] (A3) arc[start angle=180,end angle=0,radius=0.25];
+	
+	% Draw the rods and pivots
+	\draw[thick] ($(A1) + (0.25,0)$) -- (0.5,\h) coordinate (B1);
+	\draw[thick] ($(A2) + (0.25,0)$) -- (3.5,\h) coordinate (B2);
+	\draw[thick] ($(A3) + (0.25,0)$) -- (6.5,\h) coordinate (B3);
+	
+	% Draw the circles at the upper pivots
+	\draw[thick] (B1) circle (0.2);
+	\draw[thick] (B2) circle (0.2);
+	\draw[thick] (B3) circle (0.2);
+	
+	% Draw the horizontal connection
+	\draw[thick] (B1) -- (B2) -- (B3);
+	
+	% Add labels
+	\node at (0.5,-0.2) {1};
+	\node at (3.5,-0.2) {1};
+	\node at (6.5,-0.2) {1};
+	
+	\node at (-0.3,1) {2};
+	\node at (3,\h/2+0.1) {5};
+	\node at (6.1,1) {4};
+	
+	\node at (3,\h+0.3) {3};
+	
+\end{tikzpicture}

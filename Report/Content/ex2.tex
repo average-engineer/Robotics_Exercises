@@ -1,0 +1,27 @@
+\section{Exercise 2}
+Both the serial and parallel robots are considered spatial mechanisms hence for both $s = 6$.
+
+For the serial robot which has six revolute joints (one degree of freedom each), 
+\begin{align*}
+	&N = 7, j = 6, f = 6\\
+	&m_s = 6
+\end{align*}
+The parallel robot has twelve spherical joints (three degrees of freedom each) and six prismatic joints (one degree of freedom each) with fourteen links.
+\begin{align*}
+	&N = 14, j = 18, f = 42\\
+	&m_s = 12
+\end{align*}
+
+\subsection{Simplification for Serial Robots}
+The Chebychev-Grübler-Kutzbach formula can be simplified for serial manipulators which consist of no redundant degrees of freedom (eg. due to multiple closed kinematic chains). The simplification is given by
+\begin{equation}
+	m_s = \sum_{i=1}^{j} f_i
+	\label{eq:simpGr}
+\end{equation}
+where $f_i$ is the degrees of freedom allowed by the $i^{\text{th}}$ joint.
+\subsection{Modification for Parallel Robots}
+It is clear that \eqref{eq:simpGr} doesn't apply to parallel mechanisms which have multiple kinematic loops and hence redundant degrees of freedom. Moreover, the original Chebychev-Grübler-Kutzbach formula also sometimes doesn't work for all parallel mechanisms. For instance, the parallel mechanism given in this question is the \emph{Stewart Platform}, which always provides six degrees of freedom to the top platform, hence the formula should ideally give $6$ as an answer (which infact happens for the configuration where universal joints connect the legs and the base). But the redundant degrees of freedom introduced due to spherical joints on both sides of the legs are not considered. This redundant degree of freedom is the rotation of the leg about its own axis, which essentially has no influence on the resultant mechanism motion. Hence, this redundancy needs to be compensated. For six legs, the redundant degrees of freedom will be six. The modified Chebychev-Grübler-Kutzbach becomes
+\begin{equation}
+	m_s = s(N-j-1) + \sum_{i=1}^{j} f_i - C
+\end{equation}
+where $C = 6$ and we get the correct answer of six for the given parallel mechanism.

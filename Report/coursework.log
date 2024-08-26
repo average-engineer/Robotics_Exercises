@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.7)  26 AUG 2024 08:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.7)  26 AUG 2024 11:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -974,7 +974,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
+)
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/tikz-3dplot\tikz-3dplot
+.sty (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
+z/libraries\tikzlibrary3d.code.tex
+File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 34.
 
@@ -1115,7 +1123,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(Content/1.1.tex (images/1.1_serialTopology.tex
+(Content/ex1.tex (images/1.1_serialTopology.tex
 
 LaTeX Font Warning: Command \Large invalid in math mode on input line 6.
 
@@ -1137,11 +1145,12 @@ LaTeX Font Warning: Command \Large invalid in math mode on input line 11.
 
 LaTeX Font Warning: Command \Large invalid in math mode on input line 12.
 
-) (images/1.1_parallelTopology.tex)) [3
+) (images/1.1_parallelTopology.tex)) (Content/ex2.tex [3
 
 
 
-]
+]) (Content/ex3.tex
+(images/grueblersException.tex) [4]) [5]
 chapter 2.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1154,7 +1163,11 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[4
+(Content/ex4.tex
+
+LaTeX Warning: Citation `Craig' on page 6 undefined on input line 4.
+
+(images/fwdKinematics.tex)) [6
 
 ]
 chapter 3.
@@ -1169,7 +1182,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[5
+[7
 
 ]
 chapter 4.
@@ -1184,32 +1197,43 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(coursework.bbl) [6
+(coursework.bbl) [8
 
 ] (coursework.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 35291 strings out of 474587
- 916959 string characters out of 5745702
+ 35823 strings out of 474587
+ 926854 string characters out of 5745702
  1939558 words of memory out of 5000000
- 56943 multiletter control sequences out of 15000+600000
- 572639 words of font info for 89 fonts, out of 8000000 for 9000
+ 57450 multiletter control sequences out of 15000+600000
+ 572985 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,11n,112p,10907b,861s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,12n,112p,10907b,863s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmmi10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/ashut/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb>
-Output written on coursework.pdf (6 pages, 82846 bytes).
+cmbx10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmex10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ashut/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ashut/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ashut/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ashut/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/
+ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb
+><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmsy8.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmti10.pfb>
+Output written on coursework.pdf (8 pages, 161331 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
+ 92 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

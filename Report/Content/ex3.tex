@@ -1,0 +1,13 @@
+\section{Exercise 3}
+\begin{figure}[h!]
+	\centering
+	\input{images/grueblersException}
+	\caption{Four-bar linkage with one additional link and two additional revolute joints}
+	\label{fig:exception}
+\end{figure}
+\figref{fig:exception} depicts a two-dimensional four-bar linkage with an additional link (5) and two additional revolute joints connecting link 5 to link 3 and the base. According to the Chebychev-Grübler-Kutzbach formula
+\begin{align*}
+	&N = 5, j = 6, f = 6, s = 3\\
+	&m_s = 0
+\end{align*}
+But in reality, the described mechanism will have a single degree of freedom. Hence, in this case the formula fails. The reason is that in the above mechanism, the constraint introduced by the additional joints is redundant, and the instrinsic assumption of the Chebychev-Grübler-Kutzbach formula is that the constraints provided by the joints are independent.
