@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Coursework template                                                        %
+%  Advanced Control Systems lecture, RWTH Aachen University                   %
+%  Version 1.01, 2014                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{scrreprt}
+
+\include{title}
+
+\include{packages}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% DO NOT MODIFY THIS PART %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subtitle{Coursework}
+\makeatletter
+\let\runauthor\@author
+\let\runtitle\@title
+\makeatother
+
+\newcommand{\taskapp}{Task}
+\renewcommand*\chapterformat{\taskapp~\thechapter:~}
+
+\titleformat{\section}{\large\bfseries}{}{0pt}{Question \thesection:~}
+\titleformat{\subsection}{\large\bfseries}{}{0pt}{}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyhead[C]{\runtitle}
+	\fancyhead[R]{\thepage}
+	\fancyhead[L]{\runauthor}
+}
+
+\begin{document}
+
+%% Titlepage
+\maketitle
+
+%% Table of contents
+\tableofcontents 
+
+\cleardoublepage
+
+\pagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Content starts here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{System Analysis}
+\input{Content/211}
+\input{Content/212}
+\input{Content/213}
+\chapter{MIMO-systems}
+\input{Content/221}
+\input{Content/222}
+\input{Content/223}
+\chapter{Stability and LFT}
+\input{Content/231}
+\input{Content/232}
+\chapter{Coprime Factorizations and Youla Parametrisation}
+\input{Content/241}
+\input{Content/242}
+\input{Content/243}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Content ends here %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{abbrv}
+\bibliography{literature}
+
+\end{document}
