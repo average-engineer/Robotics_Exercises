@@ -1,0 +1,43 @@
+\tikzstyle{mod}    = [circle, inner sep=0pt, minimum size=1.0cm, draw=black]
+\tikzstyle{branch}    = [circle, inner sep=0pt, minimum size=0.1mm, fill=black, draw=black]
+\tikzstyle{dummy}     = [inner sep=0pt, minimum size=0pt]
+\begin{tikzpicture}[auto, node distance=2cm, >=stealth']
+	% Nodes
+	\node[mod](l2){};
+	\node[mod, right of = l2](l3){};
+	\node[mod, right of = l3](l4){};
+	\node[mod, right of = l4](l5){};
+	\node[mod, right of = l5](l6){};
+	\node[mod, right of = l6](l7){};
+	
+	\node[mod, above of = l2](u2){};
+	\node[mod, right of = u2](u3){};
+	\node[mod, right of = u3](u4){};
+	\node[mod, right of = u4](u5){};
+	\node[mod, right of = u5](u6){};
+	\node[mod, right of = u6](u7){};
+	
+	\node[mod, above right of = u4, node distance = 1.5cm,yshift = 1cm](ee){EE};
+	\node[mod, below right of = l4, node distance = 1.5cm,yshift = -1cm](b){B};
+	% Edges
+	\draw[thick,color = green](l2)--(u2);
+	\draw[thick,color = green](l3)--(u3);
+	\draw[thick,color = green](l4)--(u4);
+	\draw[thick,color = green](l5)--(u5);
+	\draw[thick,color = green](l6)--(u6);
+	\draw[thick,color = green](l7)--(u7);
+	
+	\draw[thick,color = blue](u2)--(ee);
+	\draw[thick,color = blue](u3)--(ee);
+	\draw[thick,color = blue](u4)--(ee);
+	\draw[thick,color = blue](u5)--(ee);
+	\draw[thick,color = blue](u6)--(ee);
+	\draw[thick,color = blue](u7)--(ee);
+	
+	\draw[thick,color = blue](l2)--(b);
+	\draw[thick,color = blue](l3)--(b);
+	\draw[thick,color = blue](l4)--(b);
+	\draw[thick,color = blue](l5)--(b);
+	\draw[thick,color = blue](l6)--(b);
+	\draw[thick,color = blue](l7)--(b);
+\end{tikzpicture}

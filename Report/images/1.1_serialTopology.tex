@@ -1,0 +1,20 @@
+\tikzstyle{mod}    = [circle, inner sep=0pt, minimum size=1.0cm, draw=black]
+\tikzstyle{branch}    = [circle, inner sep=0pt, minimum size=0.1mm, fill=black, draw=black]
+\tikzstyle{dummy}     = [inner sep=0pt, minimum size=0pt]
+\begin{tikzpicture}[auto, node distance=2cm, >=stealth']
+	% Nodes
+	\node[mod](l1){$\Large B$};
+	\node[mod, right of = l1](l2){$\Large 1$};
+	\node[mod, right of = l2](l3){$\Large 2$};
+	\node[mod, right of = l3](l4){$\Large 3$};
+	\node[mod, right of = l4](l5){$\Large 4$};
+	\node[mod, right of = l5](l6){$\Large 5$};
+	\node[mod, right of = l6](l7){$\Large 6$};
+	% Edges
+	\draw[thick](l1)--node[yshift = -0.5cm]{$q_1$}(l2);
+	\draw[thick](l2)--node[yshift = -0.5cm]{$q_2$}(l3);
+	\draw[thick](l3)--node[yshift = -0.5cm]{$q_3$}(l4);
+	\draw[thick](l4)--node[yshift = -0.5cm]{$q_4$}(l5);
+	\draw[thick](l5)--node[yshift = -0.5cm]{$q_5$}(l6);
+	\draw[thick](l6)--node[yshift = -0.5cm]{$q_6$}(l7);
+\end{tikzpicture}
