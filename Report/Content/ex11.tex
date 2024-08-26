@@ -1,0 +1,122 @@
+\section{Exercise 11}
+In order to make use of the convenience of inbuilt tools already available, the \emph{ode45} solver from MATLAB\textsuperscript{\textregistered} is made use of to emulate the fourth-order Runge-Kutta scheme. The implementation of the same along with the euler integrator can be found in \emph{Pendulum.m}.
+\subsection{Trade-offs between Euler Integrator and Fourth-order Runge-Kutta}
+\begin{enumerate}
+	\item The euler integrator implemented is the forward euler method which is an explicit method and is highly sensitive to the time step-size. Very large step-sizes can lead to numerical instabilities. On the other hand, the fourth-order Runge-Kutta handles smaller step-sizes much better.
+	\begin{figure}[h!]
+		\centering
+		\scalebox{0.8}{\input{images/eulerVsRK4}}
+		\caption{Solution of the open-loop pendulum from Euler-Integrator and Runge-Kutta for time step-size = $0.05$}
+		\label{fig:eulerVsRK}
+	\end{figure}
+
+	\begin{figure}[h!]
+		\centering
+		\scalebox{0.8}{\input{images/eulerVsRK4_1}}
+		\caption{Solution of the open-loop pendulum from Euler-Integrator and Runge-Kutta for time step-size = $0.005$}
+		\label{fig:eulerVsRK_1}
+	\end{figure}
+	\figref{fig:eulerVsRK} demonstrates the diverging behavior of the euler integrator for step-size of $0.05$ seconds. On the other hand, the two solutions are a lot closer for $0.005$ seconds as demonstrated by \figref{fig:eulerVsRK_1}.
+	\item Euler integrator is easier to implement compared to the fourth-order Runge-Kutta since the fourth-order Runge-Kutta requires four approximations of the derivative and Euler integrator requires only one.
+	\item Error accumulation over time is faster in Euler as already demonstrated in \figref{fig:eulerVsRK}.
+\end{enumerate}
+
+\subsection{Linearization of the System about the upper equilibrium point}
+The non-linear state-space is given by
+\begin{equation*}
+	\begin{bmatrix}
+		\dot{\theta}\\
+		\ddot{\theta}
+	\end{bmatrix} = \begin{bmatrix}
+	\dot{\theta}\\
+	\frac{u}{ml^2} - \frac{b\dot{\theta}}{ml} - \frac{g\sin\theta}{l}
+\end{bmatrix} = \bm{f}\left(\bm{x},u\right)
+\end{equation*}
+The linear states will be given by
+\begin{equation*}
+	\begin{bmatrix}
+		z\\
+		\dot{z}
+	\end{bmatrix} = \begin{bmatrix}
+	\pi - \theta\\
+	-\dot{\theta}
+\end{bmatrix} = \begin{bmatrix}
+\delta \theta\\
+\delta\dot{\theta}
+\end{bmatrix}
+\end{equation*}
+The first-order taylor series approximation around $\bm{x}_E = \left(\pi,0\right)$ is given by
+\begin{align*}
+	\begin{bmatrix}
+		\delta \dot{\theta}\\
+		\delta\ddot{\theta}
+	\end{bmatrix} &\approx \left.\frac{\partial \bm{f}}{\partial \bm{x}}\right\vert_{\bm{x} = \left(\pi,0\right)}\begin{bmatrix}
+	\delta \theta\\
+	\delta\dot{\theta}
+\end{bmatrix}\\
+\implies\begin{bmatrix}
+	\dot{z}\\
+	\ddot{z}
+\end{bmatrix} &= \begin{bmatrix}
+0 & 1 \\
+-\frac{g}{l} & -\frac{b}{ml}
+\end{bmatrix}\begin{bmatrix}
+\pi - \theta\\
+-\dot{\theta}
+\end{bmatrix} + \begin{bmatrix}
+0\\
+\frac{1}{ml^2}
+\end{bmatrix}u\\
+\implies \begin{bmatrix}
+	\dot{z}\\
+	\ddot{z}
+\end{bmatrix} &= \begin{bmatrix}
+	0 & 1 \\
+	-\frac{g}{l} & -\frac{b}{ml}
+\end{bmatrix}\begin{bmatrix}
+z\\
+\dot{z}
+\end{bmatrix} + \begin{bmatrix}
+	0\\
+	\frac{1}{ml^2}
+\end{bmatrix}u
+\end{align*}
+Hence, for the linear system around the upper equilibrium point, 
+\begin{align*}
+	\bm{A} &= \begin{bmatrix}
+		0 & 1 \\
+		-\frac{g}{l} & -\frac{b}{ml}
+	\end{bmatrix}\\
+\bm{b} &= \begin{bmatrix}
+	0\\
+	\frac{1}{ml^2}
+\end{bmatrix}
+\end{align*}
+
+\subsection{Linear Quadratic Regulator Design}
+A LQR is designed assuming full-state feedback. Assuming an infinite-time horizon, the algebraic Riccati equation is solved in order to obtain the LQR gain matrix $\bm{K}_{\text{LQR}} \in \mathbb{R}^{1\times2}$. Positive definite and symmetric matrices $\bm{Q} \in \mathbb{R}^{2\times2}$ and $\bm{R} \in \mathbb{R}$ are used to prioritize the minimization of the transient energy (states reach reference quicker) and the minimization of the actuator energy (actuator limits are prioritized) respectively.
+
+The closed-loop linear system with LQR is formulated as
+\begin{align*}
+	\dot{\bm{z}} &= \bm{A}\bm{z} + \bm{b}u & u = -\bm{K}_{\text{LQR}}\bm{z}\\
+	\dot{\bm{z}} &= \left(\bm{A} - \bm{b} \bm{K}_{\text{LQR}}\right)\bm{z}  & \bm{A}_{\text{CL}} = \bm{A} - \bm{b} \bm{K}_{\text{LQR}}
+\end{align*}
+
+\subsection{Strategy for Swing-up and Balancing}
+\begin{enumerate}
+	\item Perform swing-up using energy error till a close value to $180$ degrees is reached.
+	\item Define a threshold $\left(\epsilon\right)$ for linear behaviour of the pendulum about its upright equilibrium point. For this implementation, $\epsilon = 10$ degrees.
+	\item Switch to the LQR Controller once the linear threshold is reached in order to balance the pendulum at its upright position.
+\end{enumerate}
+
+For this implementation, $\bm{Q} = 0.1\bm{I}_{2\times2}$ and $R = 1$. The values of $\bm{Q}$ and $R$ can naturally be fine-tuned in order to ensure a balance between faster response time and the actuator limit of $1 Nm$.
+
+This strategy implementation can be found in \emph{swingUp\textunderscore Balance\textunderscore Pend.m}.
+
+\begin{figure}[h!]
+	\centering
+	\scalebox{0.8}{\input{images/energy_LQR}}
+	\caption{Swing-up and Balance Response}
+	\label{fig:energyLQR}
+\end{figure}
+\figref{fig:energyLQR} clearly shows the decent performance of the implemented strategy where the upright position is maintained as compared to when only the energy based controller is used.

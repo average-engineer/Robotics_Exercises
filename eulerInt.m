@@ -12,8 +12,8 @@ int_count = 1;
 
 while int_count < length(t)
     int_count = int_count + 1;
-    % x_dot = openLoop_pend([x1Vec(int_count - 1),x2Vec(int_count - 1)],t,l,g);
-    x_dot = swingUp_pend([x1Vec(int_count - 1),x2Vec(int_count - 1)],t,l,b,g,m);
+    x_dot = openLoop_pend([x1Vec(int_count - 1),x2Vec(int_count - 1)],t,l,g);
+%     x_dot = swingUp_pend([x1Vec(int_count - 1),x2Vec(int_count - 1)],t,l,b,g,m);
     x1Vec(int_count) = x1Vec(int_count - 1) + dt*x_dot(1);
     x2Vec(int_count) = x2Vec(int_count - 1) + dt*x_dot(2);
 end

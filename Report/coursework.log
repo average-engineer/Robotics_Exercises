@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.7)  26 AUG 2024 15:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.7)  26 AUG 2024 22:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -982,15 +982,41 @@ Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tik
 z/libraries\tikzlibrary3d.code.tex
 File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
+))
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/svg\svg.sty
+Package: svg 2020/11/26 v2.02k (include SVG pictures)
+
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/trimspaces\trimspaces.s
+ty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+) (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\c@svg@param@lastpage=\count325
+\svg@box=\box102
+\c@svg@param@currpage=\count326
+)
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent
+.sty
+Package: transparent 2022-10-27 v1.5 Transparency with color stacks
+
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/transparent\transparent
+-nometadata.sty
+Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color
+ stack (HO)
+
+(C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+))))
 Package translations Info: No language package found. I am going to use `englis
 h' as default language. on input line 34.
 
 (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count325
-\l__pdf_internal_box=\box102
+\l__color_backend_stack_int=\count327
+\l__pdf_internal_box=\box103
 ) (coursework.aux)
 \openout1 = `coursework.aux'.
 
@@ -1023,16 +1049,16 @@ Package scrbase Info: activating english \indexname on input line 34.
 (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count326
+\scratchcounter=\count328
 \scratchdimen=\dimen289
-\scratchbox=\box103
-\nofMPsegments=\count327
-\nofMParguments=\count328
+\scratchbox=\box104
+\nofMPsegments=\count329
+\nofMParguments=\count330
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count329
+\MPscratchCnt=\count331
 \MPscratchDim=\dimen290
-\MPnumerator=\count330
-\makeMPintoPDFobject=\count331
+\MPnumerator=\count332
+\makeMPintoPDFobject=\count333
 \everyMPtoPDFconversion=\toks46
 )
 (C:\Users\ashut\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
@@ -1045,7 +1071,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 fg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count332
+\c@lstlisting=\count334
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
@@ -1123,34 +1149,11 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(Content/ex1.tex (images/1.1_serialTopology.tex
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 6.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 7.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 8.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 9.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 10.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 11.
-
-
-LaTeX Font Warning: Command \Large invalid in math mode on input line 12.
-
-) (images/1.1_parallelTopology.tex)) (Content/ex2.tex [3
+[3
 
 
 
-]) (Content/ex3.tex
-(images/grueblersException.tex) [4]) [5]
+]
 chapter 2.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1163,13 +1166,9 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(Content/ex4.tex
+[4
 
-LaTeX Warning: Citation `Craig' on page 6 undefined on input line 4.
-
-(images/fwdKinematics.tex) [6
-
-] [7] (images/workspace.tex)) [8] [9]
+]
 chapter 3.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1182,7 +1181,7 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[10
+[5
 
 ]
 chapter 4.
@@ -1197,46 +1196,51 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(coursework.bbl) [11
+(Content/ex11.tex (images/eulerVsRK4.tex) (images/eulerVsRK4_1.tex)
 
-] (coursework.aux)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6
+
+] [7] (images/energy_LQR.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (coursework.bbl) [8] [9] (coursework.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 36248 strings out of 474587
- 939132 string characters out of 5745702
- 4615289 words of memory out of 5000000
- 57871 multiletter control sequences out of 15000+600000
+ 36421 strings out of 474587
+ 945385 string characters out of 5745702
+ 2233530 words of memory out of 5000000
+ 58040 multiletter control sequences out of 15000+600000
  573322 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,13n,112p,10907b,2059s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,22n,112p,10907b,2328s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ashut\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 0800.pk><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ashut/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ashut/AppData/Loc
-al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ashut/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users
-/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmssbx10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/ashut/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on coursework.pdf (11 pages, 398803 bytes).
+ts/cm/cmbx12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ashut/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ashut/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/as
+hut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
+pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr8.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmssbx10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ashut/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ashut/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/ashut/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on coursework.pdf (9 pages, 221482 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 115 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,58 @@
+\centering
+\tikzstyle{block}     = [draw, rectangle, minimum height=1.5cm, minimum width=1.6cm]
+\tikzstyle{blockM}     = [draw, rectangle, minimum height=1.25cm, minimum width=1.25cm]
+\tikzstyle{branch}    = [circle, inner sep=0pt, minimum size=0.01mm, fill=black, draw=black]
+\tikzstyle{connector} = [->, thick]
+\tikzstyle{dummy}     = [inner sep=0pt, minimum size=0pt]
+\tikzstyle{inout}     = []
+\begin{tikzpicture}[auto, node distance=3cm, >=stealth']
+	\node[block](crane) {\begin{tabular}{c}
+			3-DOF\\
+			Gantry Crane
+	\end{tabular}};
+	\node[block, right of = crane, node distance = 5cm](t1) {$\frac{1}{m}\bm{I}_{3\times3}$};
+	
+	\node[block, right of = t1, node distance=5cm](man){\begin{tabular}{c}
+			6-DOF\\
+			Robot Manipulator
+	\end{tabular}};
+	
+	\node[branch,right of = man](bur){};
+	\node[branch,left of = crane](bul){};
+	\node[branch,below of = bul](bll){};
+	\node[branch,below of = bur](blr){};
+	
+	\node[branch, left of = blr](b1){};
+	\node[branch, above of = b1, node distance = 1cm](b2){};
+	\node[branch, below of = b1, node distance = 1cm](b3){};
+	
+	\node[block, left of = b2, node distance = 2cm](t2) {$m\bm{I}_{3\times3}$};
+	
+	\node[block, left of = b3, node distance = 2cm](t3){};
+	\node[blockM, left of = b3, node distance = 2cm](t31){$\mathcal{F}$};
+	\node[block, left of = t3, node distance = 2cm](t4){$\frac{180}{\pi}\bm{I}_{3\times3}$};
+	
+	\node[branch, left of = t4, node distance = 1.5cm](b4){};
+	\node[branch, above of = b4, node distance = 2cm](b5){};
+	\node[branch, above of = b4, node distance = 1cm](b6){};
+	
+	\draw[thick](b2)--(b3);
+	\draw[connector](b2) -- node[xshift = 0.5cm,yshift = 0.8cm]{$\left(x_E,y_E,z_E\right)_{\text{m}}$}(t2);
+	\draw[connector](b3) -- node{$\mathbf{q}$}(t3);
+	\draw[connector](t3) -- (t4);
+	\draw[thick](t4)--(b4);
+	\draw[thick](t2)--(b5);
+	\draw[thick](b5)--(b4);
+	
+	\draw[connector](crane) --node[yshift=0.25cm]{$\left(x_B,y_B,z_B\right)_{\text{in}}\trans$}(t1);
+	\draw[connector](t1) --node[yshift=0.25cm]{$\left(x_B,y_B,z_B\right)_{\text{m}}\trans$}(man);
+	\draw[thick](man) -- (bur);
+	\draw[thick](b6) -- (bll);
+	\draw[thick](bur) |- (b1);
+	\draw[connector](bll) |- node[xshift = 1.5cm, yshift=-2cm]{\begin{tabular}{c}
+			$\left(x_E,y_E,z_E\right)_{\text{in}}$\\
+			$\left(\phi,\theta,\psi\right)$
+		\end{tabular}}(crane);
+	%\draw[thick](bur) |- node[xshift = -3cm, yshift=-0.25cm]{$\left(x_E,y_E,z_E,\mathbf{q}\right)\trans$}(bll);
+	%\draw[connector](bll) |- (crane);
+\end{tikzpicture}

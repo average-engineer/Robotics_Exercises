@@ -1,0 +1,19 @@
+\section{Exercise 9}
+\begin{enumerate}
+	\item For $n = 1$ one parameter is required, for $n = 2$ three parameters are required, for $n = 3$ six parameters are required.
+	\item The mass-inertia matrix is atleast semi-positive definite and symmetric. This can be explained with the help of the kinetic energy
+	\begin{equation*}
+		K = \frac{1}{2}\bm{v}\trans\bm{M}\bm{v} \in \mathbb{R}
+	\end{equation*}
+	Since kinetic energy is a scalar quantity
+	\begin{align*}
+		\frac{1}{2}\bm{v}\trans\bm{M}\bm{v} &= \frac{1}{2}\bm{v}\trans\bm{M}\trans\bm{v}\\
+		\implies \bm{M} &= \bm{M}\trans & \text{Symmetry}
+	\end{align*}
+	Since kinetic energy can not be negative
+	\begin{align*}
+		\frac{1}{2}\bm{v}\trans\bm{M}\bm{v} &\geq 0 & \text{Semi-Positive Definite}
+	\end{align*}
+	\item Donald can use the linear scalar factor $\frac{1}{1.355818}$ which converts the energy from \emph{Joule} (Metric) to \emph{Feet-Pound} (Imperial).
+	\item Yes, they will get the same values since the mass-inertia matrix is invariant to coordinate transformations for rigid bodies.
+\end{enumerate}

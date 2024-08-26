@@ -1,0 +1,31 @@
+\section{Exercise 7}
+\subsection{Inverse Dynamics}
+Inverse dynamics is done by balancing the moments about the hinge
+\begin{align*}
+	ml^2\ddot{\theta} &= \tau - mgl\sin\theta\\
+	\implies \tau &= ml\left(l\ddot{\theta} + g\sin\theta\right)
+\end{align*}
+\subsection{Forward Dynamics}
+The forward dynamics is given by
+\begin{equation*}
+	\ddot{\theta} = \frac{\tau}{ml^2} - \frac{g\sin\theta}{l}
+\end{equation*}
+
+\subsection{Euler Numerical Integration}
+A forward Euler numerical scheme is used to approximate the solution of the unforced system, whose state-space can be written as
+\begin{equation*}
+	\begin{bmatrix}
+		\dot{\theta} \\
+		\ddot{\theta}
+	\end{bmatrix} = \begin{bmatrix}
+	\dot{\theta}\\
+	-\frac{g\sin\theta}{l}
+\end{bmatrix} = f\left(\bm{x}\right) = \dot{\bm{x}}
+\end{equation*}
+Then, the euler numerical integration scheme is given by
+\begin{equation*}
+	\bm{x}\left(t_{i+1}\right) = \bm{x}\left(t_{i}\right) + f\left(\bm{x}\left(t_i\right)\right)\Delta t
+\end{equation*}
+where $\Delta t = t_{i+1} - t_i$.
+
+The euler-integrator is implemented for the unforced system in the python file \emph{eulerIntergrator.py} and the resultant visualization of the pendulum can be accessed from \emph{pendulum.gif}.

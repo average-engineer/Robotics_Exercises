@@ -1,0 +1,58 @@
+\section{Exercise 5}
+\subsection{Forward Kinematics}
+The frame of reference is assumed to originate at the input revolute joint $\left(q_1\right)$, with the Z-axis coming out of the plane and the Y axis pointing upwards.
+It is clear from the given loop geometry that
+\begin{align*}
+	l_1 &= l_2\cos\left(q_1\right) + q_3\cos\left(\pi - q_2\right) \\
+	&= l_2\cos\left(q_1\right) - q_3\cos\left(q_2\right) \\
+	\implies\cos\left(q_1\right) &= \frac{q_3\cos\left(q_2\right) + l_1}{l_2} \\
+	\implies q_1 &= \arccos\left(\frac{q_3\cos\left(q_2\right) + l_1}{l_2}\right) = f\left(q_3 = d\right)
+\end{align*}
+\subsection{Inverse Kinematics}
+Now, we know
+\begin{align*}
+	l_1 &= l_2\cos\left(q_1\right) - q_3\cos\left(q_2\right) \\
+	\implies q_3 &= \frac{l_2\cos\left(q_1\right) - l_1}{\cos\left(q_2\right)} & \text{given } q_2 > \frac{\pi}{2} \\
+	&= f^{-1}\left(q_1\right) = d
+\end{align*}
+\subsection{Maximum Output Angular Velocity}
+The forward kinematics is given by
+\begin{align*}
+	q_1 &= f\left(d\right) \\
+	\dot{q}_1 &= \frac{\partial f}{\partial d}\dot{d}\\
+	\implies \dot{q}_{1,\text{max}} &=  \frac{\partial f}{\partial d}\dot{d}_{\text{max}}
+\end{align*}
+Variable substitution is done in order to obtain $\frac{\partial f}{\partial d}$
+\begin{align*}
+	u &= \frac{d}{l_2}\cos\left(q_2\right) + \frac{l_1}{l_2}  \\
+	\implies \frac{\partial f}{\partial d} &= \frac{\partial f}{\partial u}\frac{\partial u}{\partial d} &\text{where } f = \arccos\left(u\right)\\
+	\implies \frac{\partial f}{\partial d} &= \frac{-1}{\sqrt{1-u^2}}\frac{1}{l_2}\cos\left(q_2\right)\\
+	&= \frac{-\cos\left(q_2\right)}{\sqrt{l_2^2 - \left(l_1 + d\cos q_2\right)^2}}
+\end{align*}
+Hence, the maximum output angular velocity for a given maximum actuator velocity is given by
+\begin{equation*}
+	\dot{q}_{1,\text{max}} = \frac{-\cos\left(q_2\right)\dot{d}_{\text{max}}}{\sqrt{l_2^2 - \left(l_1 + d\cos q_2\right)^2}}
+\end{equation*}
+\subsection{Maximum Output Torque}
+Let $f$ and $\tau$ be the input actuator force and output torque respectively. By the principle of virtual work we know,
+\begin{equation}
+	f\delta d = \tau\delta q_1
+	\label{eq:virtualWork}
+\end{equation}
+$\delta d$ and $\delta q_1$ are related by the Jacobian (in this case scalar value) which is nothing but
+\begin{equation*}
+	J = \frac{-\cos\left(q_2\right)}{\sqrt{l_2^2 - \left(l_1 + d\cos q_2\right)^2}}
+\end{equation*}
+Hence, \eqref{eq:virtualWork} can be formulated as
+\begin{align*}
+	f\delta d &= \tau J \delta d\\
+	\implies \tau &= \frac{1}{J} f\\
+	\implies \tau_{\text{max}} &= \frac{1}{J} f_{\text{max}}\\
+	\implies \tau_{\text{max}} &= -\frac{\sqrt{l_2^2 - \left(l_1 + d\cos q_2\right)^2}}{\cos\left(q_2\right)} f_{\text{max}}\\
+\end{align*}
+\subsection{Singularities}
+The mechanism becomes singular whenever its Jacobian loses rank i.e. a degree of freedom is lost. In this case, it corresponds to the set $\left\{\left(q_1, q_2, d\right)\trans | J = 0\right\}$ which is given by
+\begin{align*}
+	\cos\left(q_2\right) &= 0\\
+	\implies q_2 &= \frac{\pi}{2} & \text{assuming } q_2 \in \left[0,\pi\right]
+\end{align*}

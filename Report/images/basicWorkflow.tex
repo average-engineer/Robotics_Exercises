@@ -1,0 +1,26 @@
+\centering
+\tikzstyle{block}     = [draw, rectangle, minimum height=1.5cm, minimum width=1.6cm]
+\tikzstyle{branch}    = [circle, inner sep=0pt, minimum size=0.01mm, fill=black, draw=black]
+\tikzstyle{connector} = [->, thick]
+\tikzstyle{dummy}     = [inner sep=0pt, minimum size=0pt]
+\tikzstyle{inout}     = []
+\begin{tikzpicture}[auto, node distance=3cm, >=stealth']
+	\node[block](crane) {\begin{tabular}{c}
+			3-DOF\\
+			Gantry Crane
+	\end{tabular}};
+
+	\node[block, right of = crane, node distance=6cm](man){\begin{tabular}{c}
+			6-DOF\\
+			Robot Manipulator
+	\end{tabular}};
+	
+	\node[branch,right of = man](bur){};
+	\node[branch,left of = crane](bul){};
+	\node[branch,below of = bul](bll){};
+
+	\draw[connector](crane) --node[yshift=0.25cm]{$\left(x_B,y_B,z_B\right)\trans$}(man);
+	\draw[thick](man) -- (bur);
+	\draw[thick](bur) |- node[xshift = -3cm, yshift=-0.25cm]{$\left(x_E,y_E,z_E,\mathbf{q}\right)\trans$}(bll);
+	\draw[connector](bll) |- (crane);
+\end{tikzpicture}

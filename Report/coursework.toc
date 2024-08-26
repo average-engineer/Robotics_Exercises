@@ -1,17 +1,10 @@
 \contentsline {chapter}{\numberline {1}Topology and Mobility Analysis}{3}{}%
-\contentsline {section}{\numberline {1.1}Exercise 1}{3}{}%
-\contentsline {subsection}{\numberline {1.1.1}Serial Robot}{3}{}%
-\contentsline {subsection}{\numberline {1.1.2}Parallel Robot}{3}{}%
-\contentsline {section}{\numberline {1.2}Exercise 2}{4}{}%
-\contentsline {subsection}{\numberline {1.2.1}Simplification for Serial Robots}{4}{}%
-\contentsline {subsection}{\numberline {1.2.2}Modification for Parallel Robots}{4}{}%
-\contentsline {section}{\numberline {1.3}Exercise 3}{5}{}%
-\contentsline {chapter}{\numberline {2}Geometry and Kinematics}{6}{}%
-\contentsline {section}{\numberline {2.1}Exercise 4}{6}{}%
-\contentsline {subsection}{\numberline {2.1.1}Forward Kinematics}{6}{}%
-\contentsline {subsection}{\numberline {2.1.2}Inverse Kinematics}{7}{}%
-\contentsline {subsection}{\numberline {2.1.3}Program Verification}{8}{}%
-\contentsline {subsection}{\numberline {2.1.4}Workspace}{8}{}%
-\contentsline {chapter}{\numberline {3}Dynamics}{10}{}%
-\contentsline {chapter}{\numberline {4}Control}{11}{}%
+\contentsline {chapter}{\numberline {2}Geometry and Kinematics}{4}{}%
+\contentsline {chapter}{\numberline {3}Dynamics}{5}{}%
+\contentsline {chapter}{\numberline {4}Control}{6}{}%
+\contentsline {section}{\numberline {4.1}Exercise 11}{6}{}%
+\contentsline {subsection}{\numberline {4.1.1}Trade-offs between Euler Integrator and Fourth-order Runge-Kutta}{6}{}%
+\contentsline {subsection}{\numberline {4.1.2}Linearization of the System about the upper equilibrium point}{7}{}%
+\contentsline {subsection}{\numberline {4.1.3}Linear Quadratic Regulator Design}{8}{}%
+\contentsline {subsection}{\numberline {4.1.4}Strategy for Swing-up and Balancing}{8}{}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

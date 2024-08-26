@@ -1,0 +1,30 @@
+\section{Exercise 6}
+For the given scenario, it is assumed that the manipulator model from Angela makes use of the base coordinates $\left(x_B,y_B,z_B\right)$ to compute the end-effector coordinates $\left(x_E,y_E,z_E\right)$ and the orientation quaternion $\mathbf{q}$ which are then fed back to Donald's crane model. \figref{fig:workflow} illustrates this assumed workflow.
+\begin{figure}[h!]
+	\input{images/basicWorkflow}
+	\caption{Workflow between Donald and Angela}
+	\label{fig:workflow}
+\end{figure}
+\begin{enumerate}
+	\item It will be possible for Angela to make use of just a single linear scaling factor which is $\frac{1}{39.3701}$, that converts the base coordinates from inches into meters.
+	\item While Donald can use a single linear scaling factor for converting end-effector coordinates from meters to inches $\left(39.3701\right)$ and the euler angles from radians to degrees $\left(\frac{180}{\pi}\right)$, he will first have to convert the output quaternions from Angela's model into the equivalent euler angles which is a non-linear tranformation and is given by
+	\begin{equation*}
+		\left[\begin{array}{l}
+			\phi \\
+			\theta \\
+			\psi
+		\end{array}\right]=\left[\begin{array}{c}
+			a \tan 2\left(2 q_2 q_3+2 q_0 q_1 , q_3^2-q_2^2-q_1^2+q_0^2\right) \\
+			-a \sin \left(2 q_1 q_3-2 q_0 q_2\right) \\
+			a \tan 2\left(2 q_1 q_2+2 q_0 q_3, q_1^2+q_0^2-q_3^2-q_2^2\right)
+		\end{array}\right] = \mathcal{F}\left(\mathbf{q}\right)
+	\end{equation*}
+	assuming $\mathbf{q} = \left(q_1, q_2, q_3, q_4\right)\trans$. Hence, there exists no single linear scaling factor that Donald can use to convert the 6D pose to imperial system.
+\end{enumerate}
+
+\begin{figure}[h!]
+	\input{images/modWorkflow}
+	\caption{Modified Workflow between Donald and Angela}
+	\label{fig:modworkflow}
+\end{figure}
+\figref{fig:modworkflow} illustrates the way Donald and Angela can use each other's models. In the figure, $\mathcal{F}$ refers to the non-linear transformation between quaternions and euler angles, and $m = 39.3701$

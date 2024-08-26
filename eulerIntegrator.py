@@ -16,7 +16,7 @@ controller = 1 # 0: PD, 1: Energy Swing-up
 
 # Integration Range
 a = 0
-b = 5
+b = 10
 
 N = 1000 # Integration Steps
 # Step-Size
@@ -25,7 +25,7 @@ h = (b-a)/N
 t = np.arange(a, b, h)
 
 # Initial Conditions
-x1_0 = 30*(math.pi/180)
+x1_0 = 0*(math.pi/180)
 x2_0 = 0
 
 L = 0.5 # Pendulum length
@@ -51,7 +51,8 @@ while int_count < N:
         if controller == 0:
             Kp = 20
             Kd = 1
-            x1_dot, x2_dot, u = pend_pd(x1,x2,m,L,c,Kp,Kd)
+            u_max = 1000
+            x1_dot, x2_dot, u = pend_pd(x1,x2,m,L,c,Kp,Kd,u_max)
             
         elif controller == 1:
             K = 10
@@ -109,27 +110,41 @@ fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 8))
 
 # Plot theta (angle) over time
 ax1.plot(t, x1Vec*180/math.pi, 'b-')
-ax1.set_title('Pendulum Angle')
+#ax1.set_title('Pendulum Angle')
 ax1.set_xlabel('Time (s)')
 ax1.set_ylabel('Theta (Degrees)')
 ax1.grid(True)
 
 # Plot omega (angular velocity) over time
 ax2.plot(t, x2Vec*180/math.pi, 'r-')
-ax2.set_title('Pendulum Angular Velocity')
+#ax2.set_title('Pendulum Angular Velocity')
 ax2.set_xlabel('Time (s)')
 ax2.set_ylabel('Omega (degrees/s)')
 ax2.grid(True)
+if controller == 0:
+    if u_max == 1:
+        fileName_res = 'Report/images/ResponsePD_wLimit.png'
+        fileName_act = 'Report/images/ActuatorTorquePD_wLimit.png'
+    else:
+        fileName_res = 'Report/images/ResponsePD_woLimit.png'
+        fileName_act = 'Report/images/ActuatorTorquePD_woLimit.png'
+    
+elif controller == 1:
+    fileName_res = 'Report/images/ResponseEnergy.png'
+    fileName_act = 'Report/images/ActuatorTorqueEnergy.png'
+#fig.savefig(fileName_res, format='png', dpi=300, bbox_inches='tight')
+
 
 # Plot actuator torque for closed-loop
 if closedLoop:
-    plt.figure(figsize=(8, 4))
+    fig2 = plt.figure(figsize=(8, 4))
     plt.plot(t, torque)
-    plt.title("Actuator Torque")
+    #plt.title("Actuator Torque")
     plt.xlabel("Time")
     plt.ylabel("Torque (Nm)")
     plt.grid(True)
     plt.show()
+    #fig2.savefig(fileName_act, format='png', dpi=300, bbox_inches='tight')
 
 
 # Adjust layout

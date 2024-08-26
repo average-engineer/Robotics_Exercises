@@ -38,7 +38,7 @@ switch LINSYS
     case 1 % Linear System (Perform LQR)
         A = [0,1;-g/l,-b/(m*l)];
         B = [0;1/(m*l*l)];
-        Q = eye(2);
+        Q = 0.1*eye(2);
         R = 1;
         [K_lqr,~,~] = lqr(A,B,Q,R);
         z(1) = pi - x(1);
