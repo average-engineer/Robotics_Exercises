@@ -85,3 +85,33 @@ The final equations of motion are represented by
 The matrices $\bm{M}, \bm{C}$ and the vector $\bm{G}$ can be trivially found from the above equations.
 
 The equations of motion have been symbolically derived and verified in the Jupyter Notebook file \emph{2RRobotDynamics.ipynb}.
+
+\subsection{Formulation using Task-space Coordinates}
+The jacobian information can be used to obtain the equations of motion in task-space coordinates.
+We have,
+\begin{align*}
+	\begin{bmatrix}
+		x\\
+		y
+	\end{bmatrix} &= \begin{bmatrix}
+	l_1\cos\theta_1 + l_2\cos\left(\theta_1 + \theta_2\right) \\
+	l_1\sin\theta_1 + l_2\sin\left(\theta_1 + \theta_2\right)
+\end{bmatrix}\\
+\implies \bm{J} &= \begin{bmatrix}
+	-l_1\sin\theta_1 - l_2\sin\left(\theta_1+\theta_2\right) & -l_2\sin\left(\theta_1 + \theta_2\right)\\
+	l_1\cos\theta_1 + l_2\cos\left(\theta_1+\theta_2\right) & l_2\cos\left(\theta_1 + \theta_2\right)
+\end{bmatrix}\\
+\implies \dot{\bm{J}} &= \begin{bmatrix}
+	-l_1\cos\theta_1\dot{\theta}_1 - l_2\cos\left(\theta_1+\theta_2\right)\left(\dot{\theta}_1 + \dot{\theta}_1\right) & -l_2\cos\left(\theta_1 + \theta_2\right)\left(\dot{\theta}_1 + \dot{\theta}_1\right)\\
+	-l_1\sin\theta_1\dot{\theta}_1 - l_2\sin\left(\theta_1+\theta_2\right)\left(\dot{\theta}_1 + \dot{\theta}_1\right) & -l_2\sin\left(\theta_1 + \theta_2\right)\left(\dot{\theta}_1 + \dot{\theta}_1\right)
+\end{bmatrix}
+\end{align*}
+Now
+\begin{align*}
+	\dot{\bm{x}} &= \bm{J}\dot{\bm{q}} & \ddot{\bm{x}} = \dot{\bm{J}}\dot{\bm{q}} + \bm{J}\ddot{\bm{q}} \\
+	\implies \dot{\bm{q}} &= \bm{J}^{-1}\dot{\bm{x}} & \ddot{\bm{q}} = \bm{J}^{-1}\left(\ddot{\bm{x}} - \dot{\bm{J}}\bm{J}^{-1}\dot{\bm{x}}\right)
+\end{align*}
+The equations of motions in task-space coordinates are hence obtained
+\begin{equation*}
+	\bm{M}\bm{J}^{-1}\ddot{\bm{x}} + \left(\bm{C}\bm{J}^{-1} - \bm{M}\bm{J}^{-1} \dot{\bm{J}}\bm{J}^{-1}\right)\dot{\bm{x}} + \bm{G} = \bm{\tau}
+\end{equation*}

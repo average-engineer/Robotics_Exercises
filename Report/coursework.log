@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.7)  26 AUG 2024 22:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.7)  26 AUG 2024 23:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1115,13 +1115,13 @@ Class scrreprt Warning: Redefinition of \@makeschapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(coursework.toc)
+(coursework.toc [2
+
+])
 \tf@toc=\write5
 \openout5 = `coursework.toc'.
 
- [2
-
-]
+ [3]
 chapter 1.
 
 Class scrreprt Warning: \float@addtolists detected!
@@ -1149,11 +1149,34 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[3
+(Content/ex1.tex (images/1.1_serialTopology.tex
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 6.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 7.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 8.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 9.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 10.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 11.
+
+
+LaTeX Font Warning: Command \Large invalid in math mode on input line 12.
+
+) (images/1.1_parallelTopology.tex)) (Content/ex2.tex [4
 
 
 
-]
+]) (Content/ex3.tex
+(images/grueblersException.tex) [5]) [6]
 chapter 2.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1166,9 +1189,19 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[4
+(Content/ex4.tex (images/fwdKinematics.tex) [7
 
-]
+] [8] (images/workspace.tex))
+(Content/ex5.tex [9] [10] [11]) (Content/ex6.tex (images/basicWorkflow.tex)
+(images/modWorkflow.tex)
+Overfull \hbox (37.78851pt too wide) in paragraph at lines 58--27
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [12] [13]
 chapter 3.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1181,9 +1214,9 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-[5
+(Content/ex7.tex) (Content/ex8.tex [14
 
-]
+] [15] [16]) (Content/ex9.tex) [17]
 chapter 4.
 
 Class scrreprt Warning: Redefinition of \@makechapterhead detected.
@@ -1196,51 +1229,124 @@ Class scrreprt Warning: Redefinition of \@makechapterhead detected.
 (scrreprt)              KOMA-Script and will not work with a coming version,
 (scrreprt)              that will remove this deprecated code.
 
-(Content/ex11.tex (images/eulerVsRK4.tex) (images/eulerVsRK4_1.tex)
+(Content/ex10.tex
+<images/ResponsePD_woLimit.png, id=75, 622.7265pt x 481.0773pt>
+File: images/ResponsePD_woLimit.png Graphic file (type png)
+<use images/ResponsePD_woLimit.png>
+Package pdftex.def Info: images/ResponsePD_woLimit.png  used on input line 38.
+(pdftex.def)             Requested size: 622.72499pt x 481.07613pt.
+<images/ActuatorTorquePD_woLimit.png, id=77, 504.2037pt x 262.8219pt>
+File: images/ActuatorTorquePD_woLimit.png Graphic file (type png)
+<use images/ActuatorTorquePD_woLimit.png>
+Package pdftex.def Info: images/ActuatorTorquePD_woLimit.png  used on input lin
+e 44.
+(pdftex.def)             Requested size: 504.20247pt x 262.82124pt.
+ [18
+
+]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6
-
-] [7] (images/energy_LQR.tex)
+<images/ResponsePD_wLimit.png, id=82, 616.2222pt x 481.0773pt>
+File: images/ResponsePD_wLimit.png Graphic file (type png)
+<use images/ResponsePD_wLimit.png>
+Package pdftex.def Info: images/ResponsePD_wLimit.png  used on input line 56.
+(pdftex.def)             Requested size: 616.22069pt x 481.07613pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (coursework.bbl) [8] [9] (coursework.aux)
+<images/ActuatorTorquePD_wLimit.png, id=83, 499.1448pt x 262.8219pt>
+File: images/ActuatorTorquePD_wLimit.png Graphic file (type png)
+<use images/ActuatorTorquePD_wLimit.png>
+Package pdftex.def Info: images/ActuatorTorquePD_wLimit.png  used on input line
+ 62.
+(pdftex.def)             Requested size: 499.14359pt x 262.82124pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19 <./images/ResponsePD_woLimit.png>] [20 <./images/ActuatorTorquePD_woLimit.p
+ng> <./images/ResponsePD_wLimit.png>]
+<images/ResponseEnergy.png, id=94, 622.7265pt x 481.0773pt>
+File: images/ResponseEnergy.png Graphic file (type png)
+<use images/ResponseEnergy.png>
+Package pdftex.def Info: images/ResponseEnergy.png  used on input line 91.
+(pdftex.def)             Requested size: 622.72499pt x 481.07613pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<images/ActuatorTorqueEnergy.png, id=95, 513.8397pt x 262.8219pt>
+File: images/ActuatorTorqueEnergy.png Graphic file (type png)
+<use images/ActuatorTorqueEnergy.png>
+Package pdftex.def Info: images/ActuatorTorqueEnergy.png  used on input line 97
+.
+(pdftex.def)             Requested size: 513.83846pt x 262.82124pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21 <./images/ActuatorTorquePD_wLimit.png>] [22 <./images/ResponseEnergy.png> <
+./images/ActuatorTorqueEnergy.png>]) (Content/ex11.tex (images/eulerVsRK4.tex)
+(images/eulerVsRK4_1.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[23] [24] (images/energy_LQR.tex)
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [25] [26]
+chapter 5.
+
+Class scrreprt Warning: Redefinition of \@makechapterhead detected.
+(scrreprt)              Note: KOMA-Script does use styles for commands like
+(scrreprt)              \chapter. Currently it internally still provides and
+(scrreprt)              uses \@makechapterhead, but a completely different
+(scrreprt)              definition compared to the standard classes.
+(scrreprt)              So redefining or using internal \@makechapterhead
+(scrreprt)              by users or package authors may already break
+(scrreprt)              KOMA-Script and will not work with a coming version,
+(scrreprt)              that will remove this deprecated code.
+
+(Content/qa.tex) (coursework.bbl) [27
+
+] (coursework.aux)
  ***********
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-11-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 36421 strings out of 474587
- 945385 string characters out of 5745702
- 2233530 words of memory out of 5000000
- 58040 multiletter control sequences out of 15000+600000
+ 37102 strings out of 474587
+ 959949 string characters out of 5745702
+ 4636906 words of memory out of 5000000
+ 58664 multiletter control sequences out of 15000+600000
  573322 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,22n,112p,10907b,2328s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,22n,112p,10907b,2308s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ashut\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 0800.pk><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmbx12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ashut/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ashut/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/as
-hut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.
-pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr8.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmssbx10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ashut/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ashut/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/ashut/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on coursework.pdf (9 pages, 221482 bytes).
+ts/cm/cmbx10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmbx12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/ashut/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/ashut/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/ashut/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:
+/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr6.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/ashut/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ashut/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/ashut/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/ashut
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><
+C:/Users/ashut/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbol
+s/msbm10.pfb>
+Output written on coursework.pdf (27 pages, 1172442 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
+ 195 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
